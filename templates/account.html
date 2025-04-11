@@ -2,22 +2,21 @@
 <html>
 <head>
     <title>Account</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Enhanced and Simplified CSS */
+        /* Updated CSS for a more beautiful and organized page */
         :root {
-            --primary-color: #2b7de0;
-            --primary-hover: #1967d2;
-            --accent-color: #e53e3e;
-            --success-color: #38a169;
-            --bg-light: #f9fafa; /* Slightly lighter background */
-            --text-primary: #2d3748;
-            --text-secondary: #718096;
-            --border-color: #e2e8f0;
-            --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Lighter shadow */
-            --border-radius: 6px; /* Slightly smaller border-radius for a cleaner look */
+            --cf-blue: #2b7de0;
+            --cf-blue-hover: #1967d2;
+            --cf-red: #e53e3e;
+            --cf-green: #38a169;
+            --cf-gray-100: #f7fafc;
+            --cf-gray-200: #edf2f7;
+            --cf-gray-300: #e2e8f0;
+            --cf-gray-600: #718096;
+            --cf-gray-800: #2d3748;
         }
 
         * {
@@ -28,16 +27,16 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-primary);
-            line-height: 1.5; /* Slightly reduced line height */
+            background: var(--cf-gray-100);
+            color: var(--cf-gray-800);
+            line-height: 1.6;
             padding: 20px;
             margin: 0;
             -webkit-font-smoothing: antialiased;
-            max-width: 650px; /* Slightly narrower max width */
-            margin: 30px auto; /* Reduced top/bottom margin */
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            max-width: 700px;
+            margin: 40px auto;
+            border-radius: 12px; /* Slightly larger border-radius for a softer look */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
         }
 
         h1 {
@@ -45,20 +44,20 @@
         }
 
         .account-info {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 25px; /* Reduced padding slightly */
-            margin-bottom: 25px; /* Reduced margin slightly */
-            box-shadow: var(--box-shadow);
-            border: 1px solid var(--border-color);
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+            border: 1px solid var(--cf-gray-200);
         }
 
         .info-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 0; /* Reduced padding slightly */
-            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--cf-gray-200);
         }
 
         .info-row:last-child {
@@ -68,30 +67,30 @@
         .credits-container {
             display: flex;
             align-items: center;
-            gap: 8px; /* Reduced gap */
+            gap: 10px;
         }
 
         .credits {
-            font-size: 1.4rem; /* Further reduced font size */
-            font-weight: 600;
+            font-size: 1.6rem;
+            font-weight: bold;
         }
 
         .low-credits {
-            color: var(--accent-color);
+            color: var(--cf-red);
         }
 
         .high-credits {
-            color: var(--success-color);
+            color: var(--cf-green);
         }
 
         .api-key {
-            font-family: 'ui-monospace', monospace; /* More modern monospace font */
-            background-color: var(--bg-light);
-            padding: 14px; /* Reduced padding slightly */
-            border-radius: var(--border-radius);
+            font-family: 'Courier New', monospace;
+            background: var(--cf-gray-100);
+            padding: 16px;
+            border-radius: 8px;
             word-break: break-all;
-            font-size: 0.9rem; /* Further reduced font size */
-            border: 1px solid var(--border-color);
+            font-size: 1rem;
+            border: 1px solid var(--cf-gray-300);
             position: relative;
             display: flex;
             align-items: center;
@@ -99,14 +98,14 @@
         }
 
         .api-key i.fa-code {
-            margin-right: 8px; /* Reduced margin */
-            color: var(--text-secondary);
+            margin-right: 10px;
+            color: var(--cf-gray-600);
         }
 
         .logout {
             display: block;
-            margin-top: 25px; /* Reduced margin slightly */
-            color: var(--accent-color);
+            margin-top: 30px;
+            color: var(--cf-red);
             font-weight: 500;
             text-decoration: none;
             transition: color 0.2s ease;
@@ -115,76 +114,75 @@
 
         .logout:hover {
             text-decoration: underline;
-            color: var(--accent-color);
+            color: var(--cf-red);
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px; /* Reduced gap */
-            background-color: var(--primary-color);
+            gap: 10px;
+            background: var(--cf-blue);
             color: white;
             border: none;
-            border-radius: var(--border-radius);
-            padding: 12px 18px; /* Reduced padding slightly */
-            font-weight: 500; /* Slightly lighter font weight */
-            font-size: 0.9rem; /* Further reduced font size */
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-weight: 600;
+            font-size: 1rem;
             width: 100%;
             cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.1s ease; /* Smoother transitions */
-            margin-top: 14px; /* Reduced margin slightly */
-            box-shadow: var(--box-shadow);
+            transition: all 0.2s ease;
+            margin-top: 16px;
         }
 
         .btn:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-1px); /* Less pronounced hover effect */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Lighter shadow on hover */
+            background: var(--cf-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .btn-secondary {
-            background-color: white;
-            color: var(--primary-color);
-            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--cf-blue);
+            border: 1px solid var(--cf-gray-300);
         }
 
         .btn-secondary:hover {
-            background-color: var(--bg-light);
+            background: var(--cf-gray-200);
         }
 
         .api-section {
-            margin: 25px 0; /* Reduced margin slightly */
-            padding: 15px 0; /* Reduced padding slightly */
-            border-top: 1px solid var(--border-color);
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--cf-gray-200);
         }
 
         .api-docs {
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-color);
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--cf-gray-200);
         }
 
         .api-docs h3, .api-section h3 {
-            font-size: 1.3rem; /* Reduced heading size */
+            font-size: 1.5rem;
             font-weight: 600;
-            margin-bottom: 12px; /* Reduced margin */
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 8px; /* Reduced gap */
-            color: var(--text-primary);
+            gap: 10px;
+            color: var(--cf-gray-800);
         }
 
         code {
-            background-color: var(--bg-light);
-            padding: 12px; /* Reduced padding slightly */
-            border-radius: var(--border-radius);
-            font-family: 'ui-monospace', monospace;
-            font-size: 0.85rem; /* Further reduced font size */
-            margin: 12px 0; /* Reduced margin */
+            background: var(--cf-gray-200);
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            margin: 15px 0;
             overflow-x: auto;
             display: block;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--cf-gray-300);
         }
 
         #confirmationModal {
@@ -194,101 +192,107 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.3); /* Slightly lighter overlay */
+            background: rgba(0,0,0,0.5);
             z-index: 1000;
             justify-content: center;
             align-items: center;
         }
 
         .modal-content {
-            background-color: white;
-            padding: 25px; /* Reduced padding slightly */
-            border-radius: var(--border-radius);
-            max-width: 450px; /* Further reduced max width */
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 500px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--cf-gray-300);
         }
 
         .modal-content h3 {
-            font-size: 1.4rem; /* Reduced heading size */
-            margin-bottom: 15px; /* Reduced margin */
-            color: var(--accent-color);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--cf-red);
         }
 
         .modal-content p {
-            margin-bottom: 15px; /* Reduced margin */
-            color: var(--text-secondary);
+            margin-bottom: 20px;
+            color: var(--cf-gray-600);
         }
 
         .copy-icon {
             cursor: pointer;
-            color: var(--text-secondary);
-            padding: 8px; /* Reduced padding */
-            transition: color 0.2s ease, transform 0.1s ease;
+            color: var(--cf-gray-600);
+            padding: 10px;
+            transition: all 0.2s ease;
         }
 
         .copy-icon:hover {
-            color: var(--primary-color);
-            transform: scale(1.05); /* Less pronounced scale */
+            color: var(--cf-blue);
+            transform: scale(1.1);
         }
 
         .copy-success {
             position: fixed;
-            bottom: 20px; /* Reduced bottom position */
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--success-color);
+            background: var(--cf-green);
             color: white;
-            padding: 8px 16px; /* Reduced padding */
-            border-radius: 20px; /* More rounded */
-            font-size: 0.9rem; /* Reduced font size */
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
             display: none;
-            box-shadow: var(--box-shadow);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .info-label {
             font-weight: 500;
-            color: var(--text-secondary);
+            color: var(--cf-gray-600);
             display: flex;
             align-items: center;
-            gap: 8px; /* Reduced gap */
-            font-size: 0.95rem; /* Slightly smaller font size */
+            gap: 10px;
+            min-width: 80px; /* Ensure label takes up some minimal space */
+        }
+
+        .info-row > span:last-child {
+            flex-grow: 1; /* Allow the value to take remaining space */
         }
 
         .credit-actions {
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-color);
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--cf-gray-200);
             text-align: center;
         }
 
         .credit-actions p {
-            color: var(--text-secondary);
-            margin-bottom: 8px; /* Reduced margin */
-            font-size: 0.9rem; /* Reduced font size */
+            color: var(--cf-gray-600);
+            margin-bottom: 10px;
         }
 
         .credit-actions a {
-            color: var(--primary-color);
-            font-weight: 500; /* Slightly lighter font weight */
+            color: var(--cf-blue);
+            font-weight: 600;
             text-decoration: none;
             transition: color 0.2s ease;
-            font-size: 0.9rem; /* Reduced font size */
         }
 
         .credit-actions a:hover {
             text-decoration: underline;
-            color: var(--primary-hover);
+            color: var(--cf-blue-hover);
         }
 
-        /* Responsive adjustments - Further simplified */
+        /* Responsive adjustments */
         @media (max-width: 600px) {
             body {
                 padding: 15px;
-                margin-top: 15px;
-                margin-bottom: 15px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                display: none;
             }
 
             .account-info {
@@ -298,38 +302,36 @@
 
             .info-row {
                 padding: 10px 0;
-                flex-direction: column;
+                flex-direction: column; /* Stack email and value on smaller screens */
                 align-items: flex-start;
             }
 
             .info-row > span:last-child {
                 word-break: break-word;
-                margin-top: 3px; /* Reduced margin */
-                font-size: 0.9rem; /* Reduced font size */
+                margin-top: 5px;
             }
 
             .credits-container {
-                gap: 4px; /* Reduced gap */
+                gap: 5px;
             }
 
             .credits {
-                font-size: 1.3rem; /* Further reduced font size */
+                font-size: 1.4rem;
             }
 
             .api-key {
-                padding: 10px;
-                font-size: 0.85rem; /* Further reduced font size */
+                padding: 12px;
+                font-size: 0.9rem;
             }
 
             .btn {
                 padding: 10px 15px;
-                font-size: 0.85rem; /* Further reduced font size */
+                font-size: 0.9rem;
                 margin-top: 10px;
             }
 
             .logout {
                 margin-top: 20px;
-                font-size: 0.9rem; /* Reduced font size */
             }
 
             .api-section, .api-docs, .credit-actions {
@@ -338,14 +340,14 @@
             }
 
             .api-docs h3, .api-section h3 {
-                font-size: 1.2rem; /* Further reduced heading size */
+                font-size: 1.3rem;
                 margin-bottom: 10px;
-                gap: 6px; /* Reduced gap */
+                gap: 8px;
             }
 
             code {
                 padding: 10px;
-                font-size: 0.8rem; /* Further reduced font size */
+                font-size: 0.8rem;
                 margin: 10px 0;
             }
 
@@ -354,20 +356,99 @@
             }
 
             .modal-content h3 {
-                font-size: 1.3rem; /* Further reduced heading size */
-                margin-bottom: 12px;
+                font-size: 1.4rem;
+                margin-bottom: 15px;
             }
 
             .copy-success {
                 bottom: 15px;
-                font-size: 0.8rem; /* Further reduced font size */
-                padding: 6px 12px; /* Reduced padding */
+                font-size: 0.85rem;
+                padding: 8px 16px;
             }
 
             .info-label {
-                font-size: 0.9rem; /* Further reduced font size */
-                gap: 5px; /* Reduced gap */
+                font-size: 0.95rem;
+                gap: 6px;
+                min-width: auto; /* Reset min-width for smaller screens */
             }
+
+            .info-row > span:last-child {
+                flex-grow: 0; /* Reset flex-grow for smaller screens */
+            }
+        }
+
+        /* Further aesthetic improvements */
+        body {
+            /* Slightly darker and smoother background gradient */
+            background: linear-gradient(to bottom right, var(--cf-gray-100), #e8eef3);
+        }
+
+        .account-info {
+            /* Add a subtle gradient to the account info card */
+            background: linear-gradient(145deg, #ffffff, var(--cf-gray-200));
+            border: none; /* Remove the border as the gradient provides separation */
+        }
+
+        .info-label {
+            color: var(--cf-blue); /* Make labels more prominent */
+            font-weight: 600; /* Slightly bolder labels */
+        }
+
+        .credits-container {
+            /* Add a subtle shadow to the credits for emphasis */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+
+        .api-key {
+            /* Slightly darker background for the API key */
+            background: var(--cf-gray-200);
+            border: 1px solid var(--cf-gray-300);
+        }
+
+        .api-section h3, .api-docs h3 {
+            color: var(--cf-blue); /* Make section titles more prominent */
+            border-bottom: 2px solid var(--cf-gray-300); /* Add a subtle underline to section titles */
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            /* Slightly rounder buttons */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Add a bit more depth to buttons */
+        }
+
+        .btn:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhance hover effect */
+        }
+
+        .logout {
+            /* Make logout button-like */
+            display: inline-block;
+            background-color: white;
+            border: 1px solid var(--cf-red);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logout:hover {
+            background-color: var(--cf-red);
+            color: white;
+            text-decoration: none;
+        }
+
+        .copy-icon {
+            background-color: var(--cf-gray-300); /* Add background to copy icon */
+            border-radius: 5px;
+        }
+
+        .copy-icon:hover {
+            background-color: var(--cf-blue-hover);
+            color: white;
         }
     </style>
 </head>
@@ -411,9 +492,9 @@
                 <i class="fas fa-sync-alt"></i>
                 Reset API Key
             </button>
-            <p><small style="color: var(--text-secondary);">Note: Resetting your API key will invalidate the previous one.</small></p>
+            <p><small style="color: var(--cf-gray-600);">Note: Resetting your API key will invalidate the previous one.</small></p>
             {% else %}
-            <p style="color: var(--text-secondary);">
+            <p style="color: var(--cf-gray-600);">
                 <i class="fas fa-lock"></i>
                 API access is not available
             </p>
@@ -431,8 +512,8 @@
                 AI Chat Endpoint:
             </strong></p>
             <code>GET /ai?q={question}&amp;id={user_id}&amp;key={your_api_key}</code>
-            <p style="display: flex; align-items: center; gap: 6px; color: var(--text-secondary);">
-                <i class="fas fa-coins" style="color: var(--success-color);"></i>
+            <p style="display: flex; align-items: center; gap: 6px; color: var(--cf-gray-600);">
+                <i class="fas fa-coins" style="color: var(--cf-green);"></i>
                 Cost: 1 credit per request
             </p>
 
@@ -441,15 +522,15 @@
                 Facebook Video Download:
             </strong></p>
             <code>GET /fb?link={facebook_url}&amp;key={your_api_key}</code>
-            <p style="display: flex; align-items: center; gap: 6px; color: var(--text-secondary);">
-                <i class="fas fa-coins" style="color: var(--success-color);"></i>
+            <p style="display: flex; align-items: center; gap: 6px; color: var(--cf-gray-600);">
+                <i class="fas fa-coins" style="color: var(--cf-green);"></i>
                 Cost: 5 credits per request
             </p>
         </div>
 
         <div class="credit-actions">
             <p>Need more credits? Contact us to buy.</p>
-            <a href="{{ url_for('price') }}">
+            <a href=/price >
                 <i class="fas fa-tags"></i>
                 See All Pricing
             </a>
@@ -476,10 +557,13 @@
         </div>
     </div>
 
-    <a href="{{ url_for('logout') }}" class="logout">
-        <i class="fas fa-sign-out-alt"></i>
-        Logout
-    </a>
+    <div style="text-align: center;">
+        <a href="{{ url_for('logout') }}" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+        </a>
+    </div>
+
 
     <div class="copy-success" id="copySuccess">
         Copied to clipboard!
