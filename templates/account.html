@@ -6,106 +6,129 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { 
-            font-family: 'Inter', Arial, sans-serif; 
-            max-width: 600px; 
-            margin: 0 auto; 
-            padding: 20px; 
+        :root {
+            --cf-blue: #2b7de0;
+            --cf-blue-hover: #1967d2;
+            --cf-red: #e53e3e;
+            --cf-green: #38a169;
+            --cf-gray-100: #f7fafc;
+            --cf-gray-200: #edf2f7;
+            --cf-gray-300: #e2e8f0;
+            --cf-gray-600: #718096;
+            --cf-gray-800: #2d3748;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #ffffff;
-            color: #2d3748;
+            color: var(--cf-gray-800);
+            line-height: 1.5;
+            padding: 0;
+            margin: 0;
             -webkit-font-smoothing: antialiased;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        
-        .account-info { 
-            background: #f9f9f9; 
-            padding: 20px; 
-            border-radius: 12px; 
-            margin-bottom: 20px; 
-            border: 1px solid #e2e8f0;
+
+        .account-info {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--cf-gray-200);
         }
-        
-        .credits { 
-            font-size: 24px; 
-            color: #38a169; 
-            font-weight: bold; 
+
+        .credits {
+            font-size: 24px;
+            color: var(--cf-green);
+            font-weight: bold;
         }
-        
-        .api-key { 
-            font-family: 'Courier New', monospace; 
-            font-size: 16px; 
-            background: #f7fafc; 
-            padding: 12px; 
-            border-radius: 8px; 
-            border: 1px solid #e2e8f0;
+
+        .api-key {
+            font-family: 'Courier New', monospace;
+            background: var(--cf-gray-100);
+            padding: 14px 40px 14px 14px;
+            border-radius: 8px;
             word-break: break-all;
+            font-size: 0.9rem;
+            border: 1px solid var(--cf-gray-200);
             position: relative;
         }
-        
-        .logout { 
-            display: inline-block; 
-            margin-top: 20px; 
-            color: #e53e3e; 
-            text-decoration: none; 
+
+        .logout {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--cf-red);
             font-weight: 500;
+            text-decoration: none;
         }
-        
-        .logout:hover { 
-            text-decoration: underline; 
+
+        .logout:hover {
+            text-decoration: underline;
         }
-        
-        .btn { 
-            background: #2b7de0; 
-            color: white; 
-            padding: 12px 16px; 
-            border: none; 
-            border-radius: 8px; 
-            cursor: pointer; 
-            margin-top: 10px;
-            font-weight: 500;
-            width: 100%;
-            transition: background 0.2s ease;
+
+        .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            background: var(--cf-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 12px;
         }
-        
-        .btn:hover { 
-            background: #1967d2;
+
+        .btn:hover {
+            background: var(--cf-blue-hover);
             transform: translateY(-1px);
         }
-        
+
         .btn-secondary {
             background: white;
-            color: #2b7de0;
-            border: 1px solid #e2e8f0;
+            color: var(--cf-blue);
+            border: 1px solid var(--cf-gray-300);
         }
-        
+
         .btn-secondary:hover {
-            background: #f7fafc;
+            background: var(--cf-gray-100);
         }
-        
-        .api-section { 
-            margin: 20px 0; 
+
+        .api-section {
+            margin: 20px 0;
         }
-        
-        .api-docs { 
-            margin-top: 30px; 
-            border-top: 1px solid #e2e8f0; 
-            padding-top: 20px; 
+
+        .api-docs {
+            margin-top: 30px;
+            border-top: 1px solid var(--cf-gray-200);
+            padding-top: 20px;
         }
-        
-        code { 
-            background: #f7fafc; 
-            padding: 8px 12px; 
-            border-radius: 6px; 
+
+        code {
+            background: var(--cf-gray-100);
+            padding: 12px;
+            border-radius: 8px;
             font-family: 'Courier New', monospace;
-            display: block;
-            margin: 8px 0;
+            font-size: 0.85rem;
+            margin: 12px 0;
             overflow-x: auto;
+            display: block;
         }
-        
+
         #confirmationModal {
             display: none;
             position: fixed;
@@ -118,40 +141,40 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .modal-content {
             background: white;
-            padding: 24px;
-            border-radius: 12px;
+            padding: 20px;
+            border-radius: 8px;
             max-width: 400px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--cf-gray-200);
         }
-        
+
         .copy-icon {
             position: absolute;
             right: 10px;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
-            color: #718096;
+            color: var(--cf-gray-600);
             padding: 8px;
             transition: all 0.2s ease;
         }
-        
+
         .copy-icon:hover {
-            color: #2b7de0;
+            color: var(--cf-blue);
             transform: translateY(-50%) scale(1.1);
         }
-        
+
         .copy-success {
             position: fixed;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: #38a169;
+            background: var(--cf-green);
             color: white;
             padding: 8px 16px;
             border-radius: 20px;
@@ -159,39 +182,16 @@
             display: none;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
-        .low-credit-warning {
-            background: #fff8f0;
-            border-left: 4px solid #f6ad55;
-            padding: 16px;
-            border-radius: 8px;
-            margin-top: 16px;
-            color: #975a16;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .credit-actions {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #e2e8f0;
-            text-align: center;
-        }
-        
+
         h1 {
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 24px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
         }
-        
+
         .info-label {
             font-weight: 500;
-            color: #718096;
+            color: var(--cf-gray-600);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -199,47 +199,16 @@
     </style>
 </head>
 <body>
-    <h1>
-        <i class="fas fa-user-circle"></i>
-        Your Account
-    </h1>
+    <h1>Your Account</h1>
     
     <div class="account-info">
-        <div class="info-row">
-            <span class="info-label">
-                <i class="fas fa-envelope"></i>
-                Email
-            </span>
-            <span>{{ email }}</span>
-        </div>
-        
-        <div class="info-row">
-            <span class="info-label">
-                <i class="fas fa-coins"></i>
-                Credits
-            </span>
-            <span class="credits">{{ credits }}</span>
-        </div>
-        
-        {% if credits >= 1 and credits <= 5 %}
-        <div class="low-credit-warning">
-            <i class="fas fa-exclamation-triangle"></i>
-            Your credit is low. <a href="{{ url_for('price') }}" style="color: #2b7de0; font-weight: 600;">Click here to buy more credits.</a>
-        </div>
-        {% endif %}
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Credits:</strong> <span class="credits">{{ credits }}</span></p>
         
         <div class="api-section">
-            <h3>
-                <i class="fas fa-key"></i>
-                API Key
-            </h3>
-            
-            {% if api_key %}
-            <div style="position: relative;">
-                <div class="api-key" id="apiKeyDisplay">
-                    <i class="fas fa-code"></i>
-                    {{ api_key }}
-                </div>
+            <p><strong>API Key:</strong></p>
+            <div class="api-key" id="apiKeyDisplay">
+                {{ api_key }}
                 <i class="fas fa-copy copy-icon" onclick="copyApiKey()"></i>
             </div>
             <button onclick="showConfirmation()" class="btn btn-secondary">
@@ -247,53 +216,25 @@
                 Reset API Key
             </button>
             <p><small>Note: Resetting your API key will invalidate the previous one.</small></p>
-            {% else %}
-            <p style="color: #718096;">
-                <i class="fas fa-lock"></i>
-                API access is not available
-            </p>
-            {% endif %}
         </div>
         
         <div class="api-docs">
-            <h3>
-                <i class="fas fa-book"></i>
-                API Documentation
-            </h3>
-            
-            <p><strong>
-                <i class="fas fa-robot"></i>
-                AI Chat Endpoint:
-            </strong></p>
+            <h3>API Documentation</h3>
+            <p><strong>AI Chat Endpoint:</strong></p>
             <code>GET /ai?q={question}&id={user_id}&key={your_api_key}</code>
-            <p style="display: flex; align-items: center; gap: 6px; color: #718096;">
-                <i class="fas fa-coins" style="color: #38a169;"></i>
-                Cost: 1 credit per request
-            </p>
+            <p>Cost: 1 credit per request</p>
             
-            <p><strong>
-                <i class="fab fa-facebook"></i>
-                Facebook Video Download:
-            </strong></p>
+            <p><strong>Facebook Video Download:</strong></p>
             <code>GET /fb?link={facebook_url}&key={your_api_key}</code>
-            <p style="display: flex; align-items: center; gap: 6px; color: #718096;">
-                <i class="fas fa-coins" style="color: #38a169;"></i>
-                Cost: 5 credits per request
-            </p>
-        </div>
-        
-        <div class="credit-actions">
-            <p>Need more credits? Contact us to buy.</p>
-            <a href="{{ url_for('price') }}" style="color: #2b7de0; font-weight: 600;">See All Pricing</a>
+            <p>Cost: 5 credits per request</p>
+            
+            <p><strong>Current Credits:</strong> {{ credits }}</p>
         </div>
     </div>
     
     <div id="confirmationModal">
         <div class="modal-content">
-            <h3>
-                <i class="fas fa-exclamation-triangle"></i>
-                Confirm API Key Reset
-            </h3>
+            <h3>Confirm API Key Reset</h3>
             <p>Are you sure you want to reset your API key? The old key will stop working immediately.</p>
             <form method="POST">
                 <button type="submit" name="reset_api_key" class="btn">
@@ -329,7 +270,6 @@
         function copyApiKey() {
             const apiKey = document.querySelector('#apiKeyDisplay').textContent.trim();
 
-            // Modern clipboard API
             if(navigator.clipboard) {
                 navigator.clipboard.writeText(apiKey).then(() => {
                     showCopySuccess();
@@ -337,7 +277,6 @@
                     console.error('Failed to copy:', err);
                 });
             }
-            // Fallback for older browsers
             else {
                 const tempInput = document.createElement('input');
                 tempInput.value = apiKey;
