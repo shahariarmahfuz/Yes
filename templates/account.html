@@ -27,28 +27,28 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--cf-gray-100); /* Light background for better contrast */
+            background: var(--cf-gray-100);
             color: var(--cf-gray-800);
-            line-height: 1.6; /* Slightly increased line height for readability */
+            line-height: 1.6;
             padding: 20px;
             margin: 0;
             -webkit-font-smoothing: antialiased;
-            max-width: 700px; /* Increased max width for wider content */
-            margin: 40px auto; /* Center the content with more top/bottom padding */
-            border-radius: 8px; /* Optional: Add a subtle border-radius to the body */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            max-width: 700px;
+            margin: 40px auto;
+            border-radius: 12px; /* Slightly larger border-radius for a softer look */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
         }
 
         h1 {
-            display: none; /* Removed "Your Account" heading */
+            display: none;
         }
 
         .account-info {
             background: white;
             border-radius: 12px;
-            padding: 30px; /* Increased padding */
-            margin-bottom: 30px; /* Increased margin */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
             border: 1px solid var(--cf-gray-200);
         }
 
@@ -56,7 +56,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0; /* Increased padding */
+            padding: 15px 0;
             border-bottom: 1px solid var(--cf-gray-200);
         }
 
@@ -71,7 +71,7 @@
         }
 
         .credits {
-            font-size: 1.6rem; /* Reduced font size */
+            font-size: 1.6rem;
             font-weight: bold;
         }
 
@@ -86,15 +86,15 @@
         .api-key {
             font-family: 'Courier New', monospace;
             background: var(--cf-gray-100);
-            padding: 16px; /* Increased padding */
+            padding: 16px;
             border-radius: 8px;
             word-break: break-all;
-            font-size: 1rem; /* Slightly increased font size */
-            border: 1px solid var(--cf-gray-300); /* Use a slightly darker border */
+            font-size: 1rem;
+            border: 1px solid var(--cf-gray-300);
             position: relative;
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Space between text and icon */
+            justify-content: space-between;
         }
 
         .api-key i.fa-code {
@@ -103,41 +103,41 @@
         }
 
         .logout {
-            display: block; /* Make logout take full width on smaller screens */
-            margin-top: 30px; /* Increased margin */
+            display: block;
+            margin-top: 30px;
             color: var(--cf-red);
             font-weight: 500;
             text-decoration: none;
             transition: color 0.2s ease;
-            text-align: center; /* Center the logout link */
+            text-align: center;
         }
 
         .logout:hover {
             text-decoration: underline;
-            color: var(--cf-red); /* Keep the color on hover */
+            color: var(--cf-red);
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px; /* Increased gap */
+            gap: 10px;
             background: var(--cf-blue);
             color: white;
             border: none;
             border-radius: 8px;
-            padding: 14px 20px; /* Increased padding */
-            font-weight: 600; /* Slightly bolder font */
-            font-size: 1rem; /* Increased font size */
+            padding: 14px 20px;
+            font-weight: 600;
+            font-size: 1rem;
             width: 100%;
             cursor: pointer;
             transition: all 0.2s ease;
-            margin-top: 16px; /* Increased margin */
+            margin-top: 16px;
         }
 
         .btn:hover {
             background: var(--cf-blue-hover);
-            transform: translateY(-2px); /* Slightly more pronounced hover effect */
+            transform: translateY(-2px);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
@@ -148,13 +148,13 @@
         }
 
         .btn-secondary:hover {
-            background: var(--cf-gray-200); /* Slightly darker hover */
+            background: var(--cf-gray-200);
         }
 
         .api-section {
-            margin: 30px 0; /* Increased margin */
-            padding: 20px 0; /* Add some padding */
-            border-top: 1px solid var(--cf-gray-200); /* Add a separator */
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--cf-gray-200);
         }
 
         .api-docs {
@@ -174,12 +174,12 @@
         }
 
         code {
-            background: var(--cf-gray-200); /* Slightly darker background */
-            padding: 14px; /* Increased padding */
+            background: var(--cf-gray-200);
+            padding: 14px;
             border-radius: 8px;
             font-family: 'Courier New', monospace;
-            font-size: 0.9rem; /* Slightly increased font size */
-            margin: 15px 0; /* Increased margin */
+            font-size: 0.9rem;
+            margin: 15px 0;
             overflow-x: auto;
             display: block;
             border: 1px solid var(--cf-gray-300);
@@ -200,19 +200,19 @@
 
         .modal-content {
             background: white;
-            padding: 30px; /* Increased padding */
-            border-radius: 12px; /* Increased border-radius */
-            max-width: 500px; /* Increased max width */
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 500px;
             width: 100%;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--cf-gray-300); /* Slightly darker border */
+            border: 1px solid var(--cf-gray-300);
         }
 
         .modal-content h3 {
             font-size: 1.6rem;
             margin-bottom: 20px;
-            color: var(--cf-red); /* Use red for confirmation */
+            color: var(--cf-red);
         }
 
         .modal-content p {
@@ -223,7 +223,7 @@
         .copy-icon {
             cursor: pointer;
             color: var(--cf-gray-600);
-            padding: 10px; /* Increased padding */
+            padding: 10px;
             transition: all 0.2s ease;
         }
 
@@ -234,14 +234,14 @@
 
         .copy-success {
             position: fixed;
-            bottom: 30px; /* Increased bottom position */
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             background: var(--cf-green);
             color: white;
-            padding: 10px 20px; /* Increased padding */
-            border-radius: 25px; /* More rounded */
-            font-size: 1rem; /* Increased font size */
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
             display: none;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
@@ -251,14 +251,19 @@
             color: var(--cf-gray-600);
             display: flex;
             align-items: center;
-            gap: 10px; /* Increased gap */
+            gap: 10px;
+            min-width: 80px; /* Ensure label takes up some minimal space */
+        }
+
+        .info-row > span:last-child {
+            flex-grow: 1; /* Allow the value to take remaining space */
         }
 
         .credit-actions {
             margin-top: 30px;
             padding-top: 20px;
             border-top: 1px solid var(--cf-gray-200);
-            text-align: center; /* Center the credit actions */
+            text-align: center;
         }
 
         .credit-actions p {
@@ -287,7 +292,7 @@
             }
 
             h1 {
-                display: none; /* Hide the heading on smaller screens as well */
+                display: none;
             }
 
             .account-info {
@@ -302,7 +307,7 @@
             }
 
             .info-row > span:last-child {
-                word-break: break-word; /* Prevent email overflow */
+                word-break: break-word;
                 margin-top: 5px;
             }
 
@@ -364,16 +369,90 @@
             .info-label {
                 font-size: 0.95rem;
                 gap: 6px;
+                min-width: auto; /* Reset min-width for smaller screens */
             }
+
+            .info-row > span:last-child {
+                flex-grow: 0; /* Reset flex-grow for smaller screens */
+            }
+        }
+
+        /* Further aesthetic improvements */
+        body {
+            /* Slightly darker and smoother background gradient */
+            background: linear-gradient(to bottom right, var(--cf-gray-100), #e8eef3);
+        }
+
+        .account-info {
+            /* Add a subtle gradient to the account info card */
+            background: linear-gradient(145deg, #ffffff, var(--cf-gray-200));
+            border: none; /* Remove the border as the gradient provides separation */
+        }
+
+        .info-label {
+            color: var(--cf-blue); /* Make labels more prominent */
+            font-weight: 600; /* Slightly bolder labels */
+        }
+
+        .credits-container {
+            /* Add a subtle shadow to the credits for emphasis */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+
+        .api-key {
+            /* Slightly darker background for the API key */
+            background: var(--cf-gray-200);
+            border: 1px solid var(--cf-gray-300);
+        }
+
+        .api-section h3, .api-docs h3 {
+            color: var(--cf-blue); /* Make section titles more prominent */
+            border-bottom: 2px solid var(--cf-gray-300); /* Add a subtle underline to section titles */
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            /* Slightly rounder buttons */
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Add a bit more depth to buttons */
+        }
+
+        .btn:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhance hover effect */
+        }
+
+        .logout {
+            /* Make logout button-like */
+            display: inline-block;
+            background-color: white;
+            border: 1px solid var(--cf-red);
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logout:hover {
+            background-color: var(--cf-red);
+            color: white;
+            text-decoration: none;
+        }
+
+        .copy-icon {
+            background-color: var(--cf-gray-300); /* Add background to copy icon */
+            border-radius: 5px;
+        }
+
+        .copy-icon:hover {
+            background-color: var(--cf-blue-hover);
+            color: white;
         }
     </style>
 </head>
 <body>
-    <h1>
-        <i class="fas fa-user-circle"></i>
-        Your Account
-    </h1>
-
     <div class="account-info">
         <div class="info-row">
             <span class="info-label">
@@ -478,10 +557,13 @@
         </div>
     </div>
 
-    <a href="{{ url_for('logout') }}" class="logout">
-        <i class="fas fa-sign-out-alt"></i>
-        Logout
-    </a>
+    <div style="text-align: center;">
+        <a href="{{ url_for('logout') }}" class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+        </a>
+    </div>
+
 
     <div class="copy-success" id="copySuccess">
         Copied to clipboard!
