@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Email</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
+        .verify-box { background: #f9f9f9; padding: 30px; border-radius: 8px; text-align: center; }
+        .resend-btn { 
+            background: #4CAF50; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+            margin-top: 20px;
+        }
+        .resend-btn:disabled { background: #cccccc; cursor: not-allowed; }
+        .message { margin: 15px 0; }
+        .error { color: #f44336; }
+        .success { color: #4CAF50; }
+    </style>
+</head>
+<body>
+    <div class="verify-box">
+        <h2>Verify Your Email</h2>
+        <p>We've sent a verification link to <strong>{{ email }}</strong></p>
+        <p>Please check your inbox and click the link to activate your account.</p>
+        
+        <form method="POST">
+            <button type="submit" class="resend-btn">Resend Verification Email</button>
+        </form>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="message {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
+        <p style="margin-top: 30px;">
+            <a href="{{ url_for('login') }}">Return to Login</a>
+        </p>
+    </div>
+</body>
+</html>
