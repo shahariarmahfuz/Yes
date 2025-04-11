@@ -40,7 +40,13 @@
         }
 
         h1 {
-            display: none; /* Removed "Your Account" heading */
+            font-size: 2.2rem; /* Increased font size for better emphasis */
+            font-weight: 700;
+            margin-bottom: 30px; /* Increased margin */
+            display: flex;
+            align-items: center;
+            gap: 16px; /* Increased gap */
+            color: var(--cf-blue); /* Use a primary color for the heading */
         }
 
         .account-info {
@@ -64,23 +70,10 @@
             border-bottom: none;
         }
 
-        .credits-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
         .credits {
-            font-size: 1.6rem; /* Reduced font size */
-            font-weight: bold;
-        }
-
-        .low-credits {
-            color: var(--cf-red);
-        }
-
-        .high-credits {
+            font-size: 28px; /* Increased font size */
             color: var(--cf-green);
+            font-weight: bold;
         }
 
         .api-key {
@@ -103,13 +96,12 @@
         }
 
         .logout {
-            display: block; /* Make logout take full width on smaller screens */
+            display: inline-block;
             margin-top: 30px; /* Increased margin */
             color: var(--cf-red);
             font-weight: 500;
             text-decoration: none;
             transition: color 0.2s ease;
-            text-align: center; /* Center the logout link */
         }
 
         .logout:hover {
@@ -287,7 +279,9 @@
             }
 
             h1 {
-                display: none; /* Hide the heading on smaller screens as well */
+                font-size: 2rem;
+                margin-bottom: 20px;
+                gap: 10px;
             }
 
             .account-info {
@@ -297,21 +291,10 @@
 
             .info-row {
                 padding: 10px 0;
-                flex-direction: column; /* Stack email and value on smaller screens */
-                align-items: flex-start;
-            }
-
-            .info-row > span:last-child {
-                word-break: break-word; /* Prevent email overflow */
-                margin-top: 5px;
-            }
-
-            .credits-container {
-                gap: 5px;
             }
 
             .credits {
-                font-size: 1.4rem;
+                font-size: 24px;
             }
 
             .api-key {
@@ -388,13 +371,7 @@
                 <i class="fas fa-coins"></i>
                 Credits
             </span>
-            <div class="credits-container">
-                {% if credits < 5 %}
-                <span class="credits low-credits">{{ credits }}</span>
-                {% else %}
-                <span class="credits high-credits">{{ credits }}</span>
-                {% endif %}
-            </div>
+            <span class="credits">{{ credits }}</span>
         </div>
 
         <div class="api-section">
