@@ -2,35 +2,122 @@
 <html>
 <head>
     <title>Verification Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; }
-        .result-box { background: #f9f9f9; padding: 30px; border-radius: 8px; text-align: center; }
-        .success { color: #4CAF50; }
-        .error { color: #f44336; }
-        .btn {
-            background: #2196F3;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
+        /* Theme based on the Account, Login, and Sign Up Pages with Icons */
+        :root {
+            --primary-color: #2b7de0;
+            --primary-hover: #1967d2;
+            --accent-color: #e53e3e;
+            --success-color: #38a169;
+            --bg-light: #f9fafa;
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --border-color: #e2e8f0;
+            --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --border-radius: 6px;
         }
-        .btn:hover { background: #0b7dda; }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 20px;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .result-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        h2.success {
+            color: var(--success-color);
+        }
+
+        h2.error {
+            color: var(--accent-color);
+        }
+
+        h2 i {
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        p strong {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: var(--box-shadow);
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 <body>
-    <div class="result-box">
+    <div class="result-container">
         {% if success %}
-            <h2 class="success">Verification Successful!</h2>
+            <h2 class="success"><i class="fas fa-check-circle"></i> Verification Successful!</h2>
             <p>Your email has been successfully verified.</p>
-            <p>You now have 10 credits to start using our services.</p>
-            <a href="{{ url_for('login') }}" class="btn">Proceed to Login</a>
+            <p>You now have <strong>10 credits</strong> to start using our services.</p>
+            <a href="{{ url_for('login') }}" class="btn"><i class="fas fa-sign-in-alt"></i> Proceed to Login</a>
         {% else %}
-            <h2 class="error">Verification Failed</h2>
+            <h2 class="error"><i class="fas fa-times-circle"></i> Verification Failed</h2>
             <p>The verification link is invalid or has expired.</p>
-            <a href="{{ url_for('verify_send') }}" class="btn">Resend Verification Email</a>
+            <a href="{{ url_for('verify_send') }}" class="btn"><i class="fas fa-envelope"></i> Resend Verification Email</a>
         {% endif %}
     </div>
 </body>
