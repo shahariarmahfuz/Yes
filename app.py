@@ -436,6 +436,24 @@ def fetch_video_links(fb_url):
 def ping():
     return jsonify({"status": "alive"})
 
+@app.route('/reset-api-key', methods=['POST'])
+def reset_api_key():
+    if 'email' not in session:
+        return jsonify({'success': False, 'error': 'Not logged in'}), 401
+    
+    email = session['email']
+    users = load_users()
+    
+    if email not in users:
+        return jsonify({'success': False, 'error': 'User not found'}), 404
+    
+    # Generate new API key
+    new_key = generate_user_api_key()
+    users[email]['api_key'] = new_key
+    save_users(users)
+    
+    return jsonify({'success': True, 'new_key': new_key})
+
 if __name__ == "__main__":
     print("Starting server with API key rotation...")
     print(f"Total Gemini API keys available: {len(GEMINI_API_KEYS)}")
