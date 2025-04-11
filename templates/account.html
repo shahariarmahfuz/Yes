@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        /* Updated CSS for a more beautiful and organized page */
         :root {
             --cf-blue: #2b7de0;
             --cf-blue-hover: #1967d2;
@@ -26,76 +27,118 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #ffffff;
+            background: var(--cf-gray-100); /* Light background for better contrast */
             color: var(--cf-gray-800);
-            line-height: 1.5;
-            padding: 0;
+            line-height: 1.6; /* Slightly increased line height for readability */
+            padding: 20px;
             margin: 0;
             -webkit-font-smoothing: antialiased;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
+            max-width: 700px; /* Increased max width for wider content */
+            margin: 40px auto; /* Center the content with more top/bottom padding */
+            border-radius: 8px; /* Optional: Add a subtle border-radius to the body */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+        }
+
+        h1 {
+            display: none; /* Removed "Your Account" heading */
         }
 
         .account-info {
             background: white;
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            padding: 30px; /* Increased padding */
+            margin-bottom: 30px; /* Increased margin */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
             border: 1px solid var(--cf-gray-200);
         }
 
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0; /* Increased padding */
+            border-bottom: 1px solid var(--cf-gray-200);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .credits-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .credits {
-            font-size: 24px;
-            color: var(--cf-green);
+            font-size: 1.6rem; /* Reduced font size */
             font-weight: bold;
+        }
+
+        .low-credits {
+            color: var(--cf-red);
+        }
+
+        .high-credits {
+            color: var(--cf-green);
         }
 
         .api-key {
             font-family: 'Courier New', monospace;
             background: var(--cf-gray-100);
-            padding: 14px 40px 14px 14px;
+            padding: 16px; /* Increased padding */
             border-radius: 8px;
             word-break: break-all;
-            font-size: 0.9rem;
-            border: 1px solid var(--cf-gray-200);
+            font-size: 1rem; /* Slightly increased font size */
+            border: 1px solid var(--cf-gray-300); /* Use a slightly darker border */
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between text and icon */
+        }
+
+        .api-key i.fa-code {
+            margin-right: 10px;
+            color: var(--cf-gray-600);
         }
 
         .logout {
-            display: inline-block;
-            margin-top: 20px;
+            display: block; /* Make logout take full width on smaller screens */
+            margin-top: 30px; /* Increased margin */
             color: var(--cf-red);
             font-weight: 500;
             text-decoration: none;
+            transition: color 0.2s ease;
+            text-align: center; /* Center the logout link */
         }
 
         .logout:hover {
             text-decoration: underline;
+            color: var(--cf-red); /* Keep the color on hover */
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px; /* Increased gap */
             background: var(--cf-blue);
             color: white;
             border: none;
             border-radius: 8px;
-            padding: 12px 16px;
-            font-weight: 500;
-            font-size: 0.95rem;
+            padding: 14px 20px; /* Increased padding */
+            font-weight: 600; /* Slightly bolder font */
+            font-size: 1rem; /* Increased font size */
             width: 100%;
             cursor: pointer;
             transition: all 0.2s ease;
-            margin-top: 12px;
+            margin-top: 16px; /* Increased margin */
         }
 
         .btn:hover {
             background: var(--cf-blue-hover);
-            transform: translateY(-1px);
+            transform: translateY(-2px); /* Slightly more pronounced hover effect */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .btn-secondary {
@@ -105,28 +148,41 @@
         }
 
         .btn-secondary:hover {
-            background: var(--cf-gray-100);
+            background: var(--cf-gray-200); /* Slightly darker hover */
         }
 
         .api-section {
-            margin: 20px 0;
+            margin: 30px 0; /* Increased margin */
+            padding: 20px 0; /* Add some padding */
+            border-top: 1px solid var(--cf-gray-200); /* Add a separator */
         }
 
         .api-docs {
             margin-top: 30px;
-            border-top: 1px solid var(--cf-gray-200);
             padding-top: 20px;
+            border-top: 1px solid var(--cf-gray-200);
+        }
+
+        .api-docs h3, .api-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--cf-gray-800);
         }
 
         code {
-            background: var(--cf-gray-100);
-            padding: 12px;
+            background: var(--cf-gray-200); /* Slightly darker background */
+            padding: 14px; /* Increased padding */
             border-radius: 8px;
             font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            margin: 12px 0;
+            font-size: 0.9rem; /* Slightly increased font size */
+            margin: 15px 0; /* Increased margin */
             overflow-x: auto;
             display: block;
+            border: 1px solid var(--cf-gray-300);
         }
 
         #confirmationModal {
@@ -144,49 +200,50 @@
 
         .modal-content {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 400px;
+            padding: 30px; /* Increased padding */
+            border-radius: 12px; /* Increased border-radius */
+            max-width: 500px; /* Increased max width */
             width: 100%;
             text-align: center;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            border: 1px solid var(--cf-gray-200);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--cf-gray-300); /* Slightly darker border */
+        }
+
+        .modal-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--cf-red); /* Use red for confirmation */
+        }
+
+        .modal-content p {
+            margin-bottom: 20px;
+            color: var(--cf-gray-600);
         }
 
         .copy-icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
             cursor: pointer;
             color: var(--cf-gray-600);
-            padding: 8px;
+            padding: 10px; /* Increased padding */
             transition: all 0.2s ease;
         }
 
         .copy-icon:hover {
             color: var(--cf-blue);
-            transform: translateY(-50%) scale(1.1);
+            transform: scale(1.1);
         }
 
         .copy-success {
             position: fixed;
-            bottom: 20px;
+            bottom: 30px; /* Increased bottom position */
             left: 50%;
             transform: translateX(-50%);
             background: var(--cf-green);
             color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 10px 20px; /* Increased padding */
+            border-radius: 25px; /* More rounded */
+            font-size: 1rem; /* Increased font size */
             display: none;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 24px;
         }
 
         .info-label {
@@ -194,47 +251,219 @@
             color: var(--cf-gray-600);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px; /* Increased gap */
+        }
+
+        .credit-actions {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--cf-gray-200);
+            text-align: center; /* Center the credit actions */
+        }
+
+        .credit-actions p {
+            color: var(--cf-gray-600);
+            margin-bottom: 10px;
+        }
+
+        .credit-actions a {
+            color: var(--cf-blue);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .credit-actions a:hover {
+            text-decoration: underline;
+            color: var(--cf-blue-hover);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                display: none; /* Hide the heading on smaller screens as well */
+            }
+
+            .account-info {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+
+            .info-row {
+                padding: 10px 0;
+                flex-direction: column; /* Stack email and value on smaller screens */
+                align-items: flex-start;
+            }
+
+            .info-row > span:last-child {
+                word-break: break-word; /* Prevent email overflow */
+                margin-top: 5px;
+            }
+
+            .credits-container {
+                gap: 5px;
+            }
+
+            .credits {
+                font-size: 1.4rem;
+            }
+
+            .api-key {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+                margin-top: 10px;
+            }
+
+            .logout {
+                margin-top: 20px;
+            }
+
+            .api-section, .api-docs, .credit-actions {
+                margin-top: 20px;
+                padding-top: 15px;
+            }
+
+            .api-docs h3, .api-section h3 {
+                font-size: 1.3rem;
+                margin-bottom: 10px;
+                gap: 8px;
+            }
+
+            code {
+                padding: 10px;
+                font-size: 0.8rem;
+                margin: 10px 0;
+            }
+
+            .modal-content {
+                padding: 20px;
+            }
+
+            .modal-content h3 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+            }
+
+            .copy-success {
+                bottom: 15px;
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+
+            .info-label {
+                font-size: 0.95rem;
+                gap: 6px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Your Account</h1>
-    
+    <h1>
+        <i class="fas fa-user-circle"></i>
+        Your Account
+    </h1>
+
     <div class="account-info">
-        <p><strong>Email:</strong> {{ email }}</p>
-        <p><strong>Credits:</strong> <span class="credits">{{ credits }}</span></p>
-        
+        <div class="info-row">
+            <span class="info-label">
+                <i class="fas fa-envelope"></i>
+                Email
+            </span>
+            <span>{{ email }}</span>
+        </div>
+
+        <div class="info-row">
+            <span class="info-label">
+                <i class="fas fa-coins"></i>
+                Credits
+            </span>
+            <div class="credits-container">
+                {% if credits < 5 %}
+                <span class="credits low-credits">{{ credits }}</span>
+                {% else %}
+                <span class="credits high-credits">{{ credits }}</span>
+                {% endif %}
+            </div>
+        </div>
+
         <div class="api-section">
-            <p><strong>API Key:</strong></p>
-            <div class="api-key" id="apiKeyDisplay">
-                {{ api_key }}
+            <h3>
+                <i class="fas fa-key"></i>
+                API Key
+            </h3>
+
+            {% if api_key %}
+            <div class="api-key">
+                <i class="fas fa-code"></i>
+                <span id="apiKeyDisplay">{{ api_key }}</span>
                 <i class="fas fa-copy copy-icon" onclick="copyApiKey()"></i>
             </div>
             <button onclick="showConfirmation()" class="btn btn-secondary">
                 <i class="fas fa-sync-alt"></i>
                 Reset API Key
             </button>
-            <p><small>Note: Resetting your API key will invalidate the previous one.</small></p>
+            <p><small style="color: var(--cf-gray-600);">Note: Resetting your API key will invalidate the previous one.</small></p>
+            {% else %}
+            <p style="color: var(--cf-gray-600);">
+                <i class="fas fa-lock"></i>
+                API access is not available
+            </p>
+            {% endif %}
         </div>
-        
+
         <div class="api-docs">
-            <h3>API Documentation</h3>
-            <p><strong>AI Chat Endpoint:</strong></p>
-            <code>GET /ai?q={question}&id={user_id}&key={your_api_key}</code>
-            <p>Cost: 1 credit per request</p>
-            
-            <p><strong>Facebook Video Download:</strong></p>
-            <code>GET /fb?link={facebook_url}&key={your_api_key}</code>
-            <p>Cost: 5 credits per request</p>
-            
-            <p><strong>Current Credits:</strong> {{ credits }}</p>
+            <h3>
+                <i class="fas fa-book"></i>
+                API Documentation
+            </h3>
+
+            <p><strong>
+                <i class="fas fa-robot"></i>
+                AI Chat Endpoint:
+            </strong></p>
+            <code>GET /ai?q={question}&amp;id={user_id}&amp;key={your_api_key}</code>
+            <p style="display: flex; align-items: center; gap: 6px; color: var(--cf-gray-600);">
+                <i class="fas fa-coins" style="color: var(--cf-green);"></i>
+                Cost: 1 credit per request
+            </p>
+
+            <p><strong>
+                <i class="fab fa-facebook"></i>
+                Facebook Video Download:
+            </strong></p>
+            <code>GET /fb?link={facebook_url}&amp;key={your_api_key}</code>
+            <p style="display: flex; align-items: center; gap: 6px; color: var(--cf-gray-600);">
+                <i class="fas fa-coins" style="color: var(--cf-green);"></i>
+                Cost: 5 credits per request
+            </p>
+        </div>
+
+        <div class="credit-actions">
+            <p>Need more credits? Contact us to buy.</p>
+            <a href="{{ url_for('price') }}">
+                <i class="fas fa-tags"></i>
+                See All Pricing
+            </a>
         </div>
     </div>
-    
+
     <div id="confirmationModal">
         <div class="modal-content">
-            <h3>Confirm API Key Reset</h3>
+            <h3>
+                <i class="fas fa-exclamation-triangle"></i>
+                Confirm API Key Reset
+            </h3>
             <p>Are you sure you want to reset your API key? The old key will stop working immediately.</p>
             <form method="POST">
                 <button type="submit" name="reset_api_key" class="btn">
@@ -242,13 +471,13 @@
                     Confirm Reset
                 </button>
             </form>
-            <button onclick="hideConfirmation()" class="btn btn-secondary" style="margin-top: 8px;">
+            <button onclick="hideConfirmation()" class="btn btn-secondary" style="margin-top: 10px;">
                 <i class="fas fa-times"></i>
                 Cancel
             </button>
         </div>
     </div>
-    
+
     <a href="{{ url_for('logout') }}" class="logout">
         <i class="fas fa-sign-out-alt"></i>
         Logout
